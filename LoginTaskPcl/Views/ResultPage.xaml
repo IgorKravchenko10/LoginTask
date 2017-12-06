@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="LoginTaskPcl.Views.ResultPage">
+    <local:PopupPage.Animation>
+        <animations:ScaleAnimation
+        PositionIn="Center"
+        PositionOut="Center"
+        ScaleIn="1.2"
+        ScaleOut="0.8"
+        DurationIn="400"
+        DurationOut="300"
+        EasingIn="SinOut"
+        EasingOut="SinIn"
+        HasBackgroundAnimation="True"/>
+    </local:PopupPage.Animation>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Successfully signed in" FontSize="Large"/>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="First name:"/>
+            <Label Text="{Binding FirstName}"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Last name:"/>
+            <Label Text="{Binding LastName}"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Mobile:"/>
+            <Label Text="{Binding Mobile}"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Email:"/>
+            <Label Text="{Binding Email}"/>
+        </StackLayout>
+    </StackLayout>
+</local:PopupPage>

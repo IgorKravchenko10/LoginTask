@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginTaskPcl.Views.SignUpPage"
+             Title="{Binding Title}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="10, 10, 10, 0"
+                WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <StackLayout>
+        <ActivityIndicator x:Name="activityIndicator" 
+                           IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand" />
+        
+        <Entry x:Name="firstNameEntry" Placeholder="First name" Text="{Binding FirstName}"/>
+        <Entry x:Name="lastNameEntry" Placeholder="Last name" Text="{Binding LastName}"/>
+        <Entry x:Name="mobileEntry" Placeholder="Mobile" Text="{Binding Mobile}"/>
+        <Entry x:Name="emailEntry" Placeholder="Email" Text="{Binding Email}" Keyboard="Email"/>
+        <Entry x:Name="passwordEntry" Placeholder="Password" Text="{Binding Password}"/>
+        <Entry x:Name="countryEntry" Placeholder="Country Id" Text="{Binding CountryId}" Keyboard="Numeric"/>
+        <Entry x:Name="aIDEntry" Placeholder="aID" Text="{Binding aID}" Keyboard="Numeric"/>
+        
+        <Button x:Name="registrationButton" Text="Sign Up" Clicked="registrationButton_Clicked"/>
+        <Label Text="{Binding Status}"/>
+    </StackLayout>
+</ContentPage>

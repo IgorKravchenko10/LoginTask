@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginTaskPcl.Views.SignInPage"
+             Title="{Binding Title}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="10, 0, 10, 0"
+                WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <RelativeLayout>
+        <StackLayout RelativeLayout.XConstraint =
+                     "{ConstraintExpression Type=RelativeToParent,
+                                            Property=Width,
+                                            Factor=0,
+                                            Constant=0}"
+                     RelativeLayout.YConstraint =
+                     "{ConstraintExpression Type=RelativeToParent,
+                                            Property=Height,
+                                            Factor=0.2,
+                                            Constant=0}"
+                     RelativeLayout.WidthConstraint =
+                     "{ConstraintExpression Type=RelativeToParent,
+                                            Property=Width,
+                                            Factor=1,
+                                            Constant=0}">
+            <ActivityIndicator x:Name="activityIndicator" 
+                           IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="emailEntry" Placeholder="Email" Text="{Binding UserName}" Keyboard="Email"/>
+            <Entry x:Name="passwordEntry" Placeholder="Password" Text="{Binding Password}"/>
+
+            <Button x:Name="signInButton" Text="Sign In" Clicked="signInButton_Clicked"/>
+            <Label Text="Not a member?" HorizontalOptions="Center"/>
+            <Button x:Name="signUpButton" Text="Sign Up" Clicked="signUpButton_Clicked"/>
+        </StackLayout>
+    </RelativeLayout>
+
+</ContentPage>
